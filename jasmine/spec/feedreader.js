@@ -95,5 +95,19 @@ $(function() {
                 done();
             });
         });
+
+        it('handles selecting a feed that does not exist', function() {
+            // First, save our original title and make sure it's actually something
+            original_title = $(".feed .entry:first h2").text();
+            expect(original_title.length).not.toBe(0);
+
+            // Load another feed that doesn't exist
+            loadFeed(100, function() {
+                // Make sure the title does not change
+                new_title = $(".feed .entry:first h2").text();
+                expect(new_title).toBe(original_title);
+                done();
+            });
+        })
     });
 }());
