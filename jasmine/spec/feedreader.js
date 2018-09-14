@@ -62,26 +62,26 @@ $(function() {
     });
 
     describe('Initial entries', function() {
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
             })
-         });
+        });
 
-         it('contain at least one .entry element', function(done) {
+        it('contain at least one .entry element', function(done) {
             expect($('.feed .entry').length).not.toBe(0);
             done();
-         });
+        });
     });
 
     describe('New Feed Selection', function() {
-         beforeEach(function(done) {
+        beforeEach(function(done) {
             loadFeed(0, function() {
                 done();
             });
-         });
+        });
 
-         it('changes the content', function(done) {
+        it('changes the content', function(done) {
             // First, save our original title and make sure it's actually something
             original_title = $(".feed .entry:first h2").text();
             expect(original_title.length).not.toBe(0);
@@ -94,6 +94,6 @@ $(function() {
                 expect(new_title).not.toBe(original_title);
                 done();
             });
-         })
+        });
     });
 }());
