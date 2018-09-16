@@ -49,15 +49,15 @@ $(function() {
 
         it('changes visibility when menu icon is clicked', function() {
             // It should be hidden at first
-            expect($('body').attr('class')).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
 
             // After one click it should not be hidden
             $('.menu-icon-link').trigger('click');
-            expect($('body').attr('class')).toBe('');
+            expect($('body').hasClass('menu-hidden')).toBe(false);
 
             // After the second click it should be hidden again
             $('.menu-icon-link').trigger('click');
-            expect($('body').attr('class')).toBe('menu-hidden');
+            expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
